@@ -7,5 +7,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react()
-  ],
+  ], server: {
+    host: '0.0.0.0', // allows access from any device on the same network
+  }
 })
