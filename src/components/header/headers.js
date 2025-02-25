@@ -1,4 +1,5 @@
 import { BsFillHouseFill, BsSearch, BsStopwatchFill, BsStars, BsCollectionPlayFill, BsDisplayFill } from "react-icons/bs";
+import { MdMoreVert as MoreIcon } from "react-icons/md";
 
 export const navHeader = [
     {
@@ -32,3 +33,5 @@ export const navHeader = [
         route: "/series"
     }
 ]
+
+export { MoreIcon };
