@@ -14,13 +14,14 @@ function SideBar({ selected, onUpdate, onClose }) {
 
     return (
         <aside
-            className="flex flex-col justify-start items-start select-none w-1/2 md:w-1/4 lg:w-1/5  h-screen pt-4 bg-secondary md:bg-body">
+            className="flex flex-col justify-start items-start select-none w-1/2 md:w-full h-screen pt-4 bg-secondary md:bg-body
+            ">
             <div className="hidden md:block sticky top-0 z-10 bg-body pb-4">
                 <SiteLogo />
             </div>
 
 
-            {/* Display only on small screen to close this sidebar */}
+            {/* Display only on small screen to close this */}
             <div
                 className="md:hidden w-full sticky flex justify-end items-end z-10 px-5"
             >
@@ -33,7 +34,8 @@ function SideBar({ selected, onUpdate, onClose }) {
             </div>
 
 
-            <nav className='overflow-y-auto scoll w-full  pl-4 md:pl-0 pb-80 md:pb-0 sidebar-scrollbar'>
+            <nav
+                className='overflow-y-auto scoll w-full  pl-4 md:pl-0 pb-80 md:pb-0 sidebar-scrollbar'>
                 {categories.map((category) => (
                     <div key={category.title}>
                         <h2 className="mt-6 text-gray-300 mb-2 text-[13px]">{category.title}</h2>
@@ -43,6 +45,7 @@ function SideBar({ selected, onUpdate, onClose }) {
                                 navItem={item}
                                 selected={item.id === selected}
                                 onUpdate={onUpdate}
+                                onCloseSideBar={onClose}
                             />
                         ))}
                     </div>

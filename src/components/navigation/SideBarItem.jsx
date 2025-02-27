@@ -1,11 +1,20 @@
 /* eslint-disable react/prop-types */
 
 
-function SideBarItem({ navItem, selected, onUpdate }) {
+function SideBarItem({ navItem, selected, onUpdate, onCloseSideBar }) {
     return (
         <div
             className="flex justify-between items-center w-full p-2 py-3 cursor-pointer hover:bg-secondary rounded-[8px] active:scale-98 "
-            onClick={() => onUpdate(navItem.id)}
+            onClick={() => {
+                console.log(`${onUpdate} and ${onCloseSideBar}`);
+                onUpdate(navItem.id);
+                // Only passing from Header.jsx not from App.jsx
+                // which means below function is only applicable for lessthan md screens
+                if (onCloseSideBar) {
+                    onCloseSideBar();
+                }
+
+            }}
         >
             <navItem.icon size={25} className={`${selected ? 'text-on-body' : 'text-gray-400'}`} />
             <div className="flex justify-between items-center w-full ml-5">
