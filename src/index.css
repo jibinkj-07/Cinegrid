@@ -3,18 +3,43 @@
 @theme {
   --color-body: #030712;
   --color-primary: #00C6BD;
-  --color-onSurface: #060f25;
-  --color-surface: #F2F2F2;
+  --color-secondary: #1A1F2E;
+  --color-on-body: #F2F2F2;
 }
 
+@layer utilities {
+
+  /* Custom Scrollbar for the entire page */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #030712;
+    /* Dark gray track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1A1F2E;
+    border-radius: 50px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(33, 40, 58);
+  }
+
+  .icon-button {
+    @apply active:scale-85 hover:text-primary cursor-pointer;
+  }
+}
 
 
 
 :root {
   font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
   font-size: 14px;
+  font-weight: 400;
   color-scheme: light dark;
   color: #F2F2F2;
   background-color: #030712;
