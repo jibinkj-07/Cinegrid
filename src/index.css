@@ -11,7 +11,7 @@
 
   /* Custom Scrollbar for the entire page */
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -26,6 +26,27 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(33, 40, 58);
+  }
+
+
+  /* Apply styles only to the sidebar */
+  @media (max-width: 768px) {
+    .sidebar-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .sidebar-scrollbar::-webkit-scrollbar-track {
+      background: #1A1F2E;
+    }
+
+    .sidebar-scrollbar::-webkit-scrollbar-thumb {
+      background: #2c344d;
+      border-radius: 50px;
+    }
+
+    .sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #384261;
+    }
   }
 
   .icon-button {
