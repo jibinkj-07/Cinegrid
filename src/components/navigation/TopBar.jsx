@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { HiMenuAlt2 as HamburgerIcon } from "react-icons/hi";
 import SiteLogo from '../core/SiteLogo';
 import SideBar from "./SideBar";
 import { useState } from 'react';
 
-function TopBar() {
+function TopBar({ activeCategory, updateCategory }) {
     const [showSidebar, setShowSidebar] = useState(false);
 
     const toggleSideBar = () => {
@@ -26,7 +27,11 @@ function TopBar() {
             <div
                 className={`fixed h-full md:hidden z-20 w-1/2 top-0 left-0 transition-transform duration-300 ease-in-out transform ${showSidebar ? 'translate-x-0' : '-translate-x-full'
                     }`}
-            ><SideBar toggleSideBar={toggleSideBar} /></div>
+            ><SideBar
+                    toggleSideBar={toggleSideBar}
+                    activeCategory={activeCategory}
+                    updateCategory={updateCategory}
+                /></div>
         </div>
 
     )
