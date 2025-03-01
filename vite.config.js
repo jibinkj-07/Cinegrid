@@ -9,5 +9,7 @@ export default defineConfig({
     react()
   ], server: {
     host: '0.0.0.0', // allows access from any device on the same network
-  }
+  }, css: {
+    postcss: './postcss.config.js', // Optional, Vite auto-detects postcss.config.js
+  },
 })
