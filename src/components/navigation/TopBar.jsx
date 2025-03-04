@@ -4,7 +4,7 @@ import SiteLogo from '../core/SiteLogo';
 import SideBar from "./SideBar";
 import { useState } from 'react';
 
-function TopBar({ activeCategory, updateCategory }) {
+function TopBar() {
     const [showSidebar, setShowSidebar] = useState(false);
 
     const toggleSideBar = () => {
@@ -27,11 +27,9 @@ function TopBar({ activeCategory, updateCategory }) {
             <div
                 className={`fixed h-full md:hidden z-20 w-1/2 top-0 left-0 transition-transform duration-300 ease-in-out transform ${showSidebar ? 'translate-x-0' : '-translate-x-full'
                     }`}
-            ><SideBar
-                    toggleSideBar={toggleSideBar}
-                    activeCategory={activeCategory}
-                    updateCategory={updateCategory}
-                /></div>
+            >
+                <SideBar toggleSideBar={toggleSideBar} />
+            </div>
         </div>
 
     )

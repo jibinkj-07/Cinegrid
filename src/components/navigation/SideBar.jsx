@@ -4,7 +4,7 @@ import { IoIosClose } from "react-icons/io";
 import { categories } from './nav.helper';
 import SideBarItemTile from './SideBarItemTile';
 
-function SideBar({ toggleSideBar, activeCategory, updateCategory }) {
+function SideBar({ toggleSideBar }) {
     // ${toggleSideBar} only passes from TopBar means only availble in small screens
     return (
         <aside className={`w-full h-full flex flex-col 
@@ -36,8 +36,6 @@ function SideBar({ toggleSideBar, activeCategory, updateCategory }) {
                             <SideBarItemTile
                                 key={item.id}
                                 navItem={item}
-                                selected={activeCategory === item.id}
-                                updateCategory={updateCategory}
                                 toggleSideBar={toggleSideBar}
                             />
                         ))}
