@@ -1,6 +1,6 @@
 import { TbTrendingUp } from "react-icons/tb";
 import { MdOutlineFeaturedPlayList, MdSmartDisplay } from "react-icons/md";
-import { BsCalendar2Week, BsFillTvFill } from "react-icons/bs";
+import { BsFillTvFill, BsCalendar3WeekFill } from "react-icons/bs";
 import { FaRegHeart, FaStar, FaCalendarDay } from "react-icons/fa";
 import { FaHandsClapping } from "react-icons/fa6";
 import { PiFilmSlateFill } from "react-icons/pi";
@@ -8,24 +8,22 @@ import { PiFilmSlateFill } from "react-icons/pi";
 
 const homeNavItems = [
     {
-        id: "tredending-movies",
+        id: "trending-movies",
         icon: TbTrendingUp,
-        label: "Trending Movies"
+        label: "Trending Movies",
+        endpoint: "/trending/movie/day"
     },
     {
         id: "featured-tv-shows",
         icon: MdOutlineFeaturedPlayList,
-        label: "Featured TV Shows"
-    },
-    {
-        id: "latest-releases",
-        icon: BsCalendar2Week,
-        label: "Latest Releases"
+        label: "Featured TV Shows",
+        endpoint: "/trending/tv/day"
     },
     {
         id: "popular-actors",
         icon: FaRegHeart,
-        label: "Popular Actors"
+        label: "Popular Actors",
+        endpoint: "/person/popular"
     }
 ];
 
@@ -33,54 +31,77 @@ const moviesNavItems = [
     {
         id: "popular",
         icon: FaHandsClapping,
+        domain: "Movies",
         label: "Popular",
-        path: "/movie/popular"
+        endpoint: "/movie/popular"
     },
 
     {
         id: "now-playing",
         icon: MdSmartDisplay,
+        domain: "Movies",
         label: "Now Playing",
-        path: "/movie/now_playing"
+        endpoint: "/movie/now_playing"
+    },
+
+    {
+        id: "latest-releases-movies",
+        domain: "Movies",
+        icon: BsCalendar3WeekFill,
+        label: "Latest",
+        endpoint: "/movie/latest"
     },
     {
         id: "upcoming",
         icon: PiFilmSlateFill,
+        domain: "Movies",
         label: "Upcoming",
-        path: "/movie/upcoming"
+        endpoint: "/movie/upcoming"
     },
     {
         id: "top-rated",
         icon: FaStar,
+        domain: "Movies",
         label: "Top Rated",
-        path: "/movie/top_rated"
+        endpoint: "/movie/top_rated"
     }
 ];
 const tvShowsNavItems = [
     {
         id: "popular-shows",
         icon: FaHandsClapping,
-        label: "Popular Shows",
-        path: "/tv/popular"
+        domain: "Shows",
+        label: "Popular",
+        endpoint: "/tv/popular"
     },
 
     {
         id: "airing-today",
         icon: FaCalendarDay,
+        domain: "Shows",
         label: "Airing Today",
-        path: "/tv/airing_today"
+        endpoint: "/tv/airing_today"
+    },
+    {
+        id: "latest-releases-tv",
+        icon: BsCalendar3WeekFill,
+        domain: "Shows",
+        label: "Latest",
+        endpoint: "/tv/latest"
     },
     {
         id: "on-the-air",
         icon: BsFillTvFill,
+        domain: "Shows",
         label: "On The Air",
-        path: "/tv/on_the_air"
+        endpoint: "/tv/on_the_air"
     },
     {
         id: "tv-top-rated",
         icon: FaStar,
+        domain: "Shows",
         label: "Top Rated",
-        path: "/tv/top_rated"
+        endpoint: "/tv/top_rated"
     }
 ];
 

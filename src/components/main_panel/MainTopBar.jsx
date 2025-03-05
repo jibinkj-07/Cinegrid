@@ -6,7 +6,10 @@ function MainTopBar() {
     const { activeCategory } = useCategory();
     return (
         <div className="flex flex-col md:flex-row justify-between items-start  md:items-center pb-4">
-            <h2 className="font-semibold text-xl pb-2 md:pb-0">{activeCategory.label}</h2>
+            <h2 className="font-semibold text-xl pb-2 md:pb-0">
+                {`${activeCategory.label} ${activeCategory.domain ?? ''}`}
+
+            </h2>
             {/* Search bar */}
             <div className="relative w-full max-w-md md:max-w-sm mr-5 2xl:mr-[200px]">
                 <RiSearchLine
