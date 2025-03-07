@@ -20,7 +20,7 @@ const MovieCard = ({ movie }) => {
                     <h3 className="text-white text-lg font-semibold">{movie.title}</h3>
                     <h3 className="text-gray-300 text-[11px] font-medium">{formatDate(movie.release_date)}</h3>
                     {/* Popularity meter */}
-                    <PopularityMeter popularity={movie.vote_average} />
+                    {Number(movie.vote_average) > 0 && <PopularityMeter popularity={movie.vote_average} />}
 
                 </div>
             </div>

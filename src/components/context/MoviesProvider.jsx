@@ -8,7 +8,7 @@ export const MoviesProvider = ({ children }) => {
     const { activeCategory } = useCategory();
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
-    const [totalPage, setTotalPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState("");
 
@@ -17,7 +17,7 @@ export const MoviesProvider = ({ children }) => {
         setPage(page)
     }
     const nextPage = () => {
-        if (page >= totalPage) return; // Prevent exceeding totalPage
+        if (page >= totalPages) return; // Prevent exceeding totalPage
         setPage((prev) => prev + 1);
     };
 
@@ -36,7 +36,7 @@ export const MoviesProvider = ({ children }) => {
             // Sort movies by vote_average in descending order (high to low)
             const sortedMovies = (results || []).sort((a, b) => b.vote_average - a.vote_average);
             setMovies(sortedMovies);
-            setTotalPage(total_pages ? Number(total_pages) : 1);
+            setTotalPages(total_pages ? Number(total_pages) : 1);
         } catch (e) {
             setError(e);
         } finally {
@@ -51,13 +51,19 @@ export const MoviesProvider = ({ children }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeCategory.id, page]);
 
+    useEffect(() => {
+        console.log("Category Changed")
+        setPage(1);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeCategory.id]);
+
 
     return (
         <MoviesContext.Provider value={{
             loading,
             movies,
             page,
-            totalPage,
+            totalPages,
             error,
             updatePage,
             fetchMovies,
