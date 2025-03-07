@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MovieDetail from './components/movie/MovieDetail';
 import Home from './components/home/Home';
 import AppProviders from "./components/context/AppProviders";
+import ActorDetail from "./components/actor/ActorDetail";
 
 
 const App = () => {
@@ -10,7 +11,8 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movies/:id" element={<MovieDetail />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/actor/:id" element={<ActorDetail />} />
         </Routes>
       </Router>
     </AppProviders>

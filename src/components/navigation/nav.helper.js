@@ -43,14 +43,6 @@ const moviesNavItems = [
         label: "Now Playing",
         endpoint: "/movie/now_playing"
     },
-
-    {
-        id: "latest-releases-movies",
-        domain: "Movies",
-        icon: BsCalendar3WeekFill,
-        label: "Latest",
-        endpoint: "/movie/latest"
-    },
     {
         id: "upcoming",
         icon: PiFilmSlateFill,
@@ -81,13 +73,6 @@ const tvShowsNavItems = [
         domain: "Shows",
         label: "Airing Today",
         endpoint: "/tv/airing_today"
-    },
-    {
-        id: "latest-releases-tv",
-        icon: BsCalendar3WeekFill,
-        domain: "Shows",
-        label: "Latest",
-        endpoint: "/tv/latest"
     },
     {
         id: "on-the-air",

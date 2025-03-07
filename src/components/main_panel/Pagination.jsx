@@ -25,7 +25,7 @@ function Pagination() {
                 {/* Left Ellipsis */}
                 {page > pageRange + 1 && (
                     <>
-                        <button onClick={() => { }} className="hover:text-primary active:scale-95 cursor-pointer px-3 py-1 border rounded ml-5">
+                        <button onClick={() => updatePage(1)} className="hover:text-primary active:scale-95 cursor-pointer px-3 py-1 border rounded ml-5">
                             1
                         </button>
                         <span className="ml-3 text-2xl">....</span>

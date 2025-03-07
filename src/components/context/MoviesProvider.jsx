@@ -36,7 +36,7 @@ export const MoviesProvider = ({ children }) => {
             // Sort movies by vote_average in descending order (high to low)
             const sortedMovies = (results || []).sort((a, b) => b.vote_average - a.vote_average);
             setMovies(sortedMovies);
-            setTotalPages(total_pages ? Number(total_pages) : 1);
+            setTotalPages(total_pages ? Math.min(Number(total_pages), 500) : 1);
         } catch (e) {
             setError(e);
         } finally {
