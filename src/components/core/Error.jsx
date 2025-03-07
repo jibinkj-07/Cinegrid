@@ -17,7 +17,7 @@ function Error({ message }) {
                 Something went wrong
             </h2>
             <h2 className='my-2'>
-                {message}
+                {`${message}`}
             </h2>
             <FilledButton label="Try again" onClick={() => fetchMovies()} />
         </div>

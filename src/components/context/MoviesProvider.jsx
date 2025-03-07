@@ -28,16 +28,17 @@ export const MoviesProvider = ({ children }) => {
 
     // Function to fetch movie list for active category
     const fetchMovies = async () => {
-        console.log(`Called fetchMovies with ${activeCategory.endpoint}`)
         setError("");
         setLoading(true);
         try {
-            const { results, total_pages } = await getMovies(activeCategory.endpoint, page);
+            const { results, total_pages } = await
+                getMovies(activeCategory.endpoint, page, activeCategory.search);
             // Sort movies by vote_average in descending order (high to low)
             const sortedMovies = (results || []).sort((a, b) => b.vote_average - a.vote_average);
             setMovies(sortedMovies);
             setTotalPages(total_pages ? Math.min(Number(total_pages), 500) : 1);
         } catch (e) {
+            console.log(`error ${e}`);
             setError(e);
         } finally {
             setLoading(false);

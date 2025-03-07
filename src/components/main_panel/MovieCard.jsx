@@ -2,17 +2,25 @@
 import PopularityMeter from "./PopularityMeter";
 import { Link } from "react-router-dom";
 import { formatDate } from "../core/utilities";
+import defaultThumbnail from '../../assets/images/thumbnail-portait.png';
 
 const MovieCard = ({ movie }) => {
 
     const imageUrl = 'https://image.tmdb.org/t/p/w500/';
+    const thumbnail = movie.poster_path || movie.backdrop_path;
+
+
     return (
         <Link to={`/movie/${movie.id}`}>
             <div className="relative w-full h-70 rounded-2xl overflow-hidden shadow-lg border border-secondary cursor-pointer group active:scale-98">
                 {/* Background Image with Zoom-in Effect */}
                 <div
                     className="absolute top-0 left-0 w-full h-full bg-cover bg-center transform transition-transform duration-300 group-hover:scale-110  hover:opacity-50"
-                    style={{ backgroundImage: `url(${imageUrl}${movie.poster_path || movie.backdrop_path})` }}
+                    style={{
+                        backgroundImage: `url(${thumbnail ?
+                            `${imageUrl}${thumbnail}` :
+                            `${defaultThumbnail}`} )`
+                    }}
                 ></div>
 
                 {/* Gradient Overlay */}
