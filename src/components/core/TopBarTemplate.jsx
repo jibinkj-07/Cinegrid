@@ -35,12 +35,12 @@ function TopBarTemplate() {
         <div className={`z-50 fixed top-0 left-0 py-4 px-5 2xl:px-[200px] flex justify-between items-center w-full text-center transition-transform duration-300 ease-in-out ${showTopbar ? 'transform translate-y-0' : 'transform -translate-y-full'} bg-gradient-to-t from-transparent to-gray-900`}>
             <button
                 onClick={() => navigate(-1)}
-                className="hover:text-primary active:scale-95 flex justify-center items-center">
+                className="hover:text-primary active:scale-95 flex justify-center items-center cursor-pointer">
                 <span className="text-xl mr-1"> &lt;</span>Back
             </button>
 
             <SiteLogo />
-            <div></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
         </div>
     )
 }
