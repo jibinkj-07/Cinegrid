@@ -10,3 +10,15 @@ export const formatDate = (dateString) => {
     // Return the formatted string
     return `${day < 10 ? '0' + day : day} ${month} ${year}`;
 }
+
+export const convertMinutesToHours = (minutes) => {
+    if (minutes < 0) return "";
+
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+
+    return `${hours}h ${remainingMinutes}m`;
+}
+
+export const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+export const coverimageBaseURL = 'https://image.tmdb.org/t/p/original/';

@@ -8,10 +8,13 @@ import ActorCard from './ActorCard.jsx';
 import Empty from '../core/Empty.jsx';
 
 function GridLayout() {
-    const { movies, error } = useMovies();
+    const { movies, error, fetchMovies } = useMovies();
     const { activeCategory } = useCategory();
 
-    if (error) return <Error message={error} />
+    if (error) return <Error
+        message={error}
+        onRetry={fetchMovies}
+    />
 
     if (Object.keys(movies).length === 0) {
         return <Empty message={"No results found!"} />

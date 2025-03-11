@@ -21,4 +21,16 @@ export const getMovies = async (endpoint, page = 1, search = false) => {
     }
 }
 
+export const getMovieDetail = async (movieId) => {
+    if (!movieId) return;
+    let path = `${BASE_URL}/movie/${movieId}?append_to_response=credits,reviews&api_key=${API_KEY}`;
+    try {
+        const response = await axios.get(path);
+        return response.data;
+    } catch (e) {
+        console.log(`error from getMovieDetail() ${e}`);
+        throw new Error(`Failed to fetch movie detail`);
+    }
+}
+
 

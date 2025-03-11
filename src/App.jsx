@@ -3,6 +3,7 @@ import MovieDetail from './components/movie/MovieDetail';
 import Home from './components/home/Home';
 import AppProviders from "./components/context/AppProviders";
 import ActorDetail from "./components/actor/ActorDetail";
+import CreditPage from "./components/credits/CreditPage";
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/movie/:id/credits" element={<CreditPage />} />
           <Route path="/actor/:id" element={<ActorDetail />} />
         </Routes>
       </Router>

@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 import errorSvg from '../../assets/svg/error.svg';
 import FilledButton from './FilledButton';
-import { useMovies } from '../context/moviesContext';
 
-function Error({ message }) {
-    const { fetchMovies } = useMovies();
+function Error({ message, onRetry }) {
     return (
         <div className="flex justify-center flex-col items-center h-full">
             <img
@@ -19,7 +17,7 @@ function Error({ message }) {
             <h2 className='my-2'>
                 {`${message}`}
             </h2>
-            <FilledButton label="Try again" onClick={() => fetchMovies()} />
+            <FilledButton label="Try again" onClick={onRetry} />
         </div>
     )
 }

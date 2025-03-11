@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import PopularityMeter from "./PopularityMeter";
 import { Link } from "react-router-dom";
-import { formatDate } from "../core/utilities";
+import { formatDate, imageBaseURL } from "../core/utilities";
 import defaultThumbnail from '../../assets/images/thumbnail-portait.png';
+
 
 const MovieCard = ({ movie }) => {
 
-    const imageUrl = 'https://image.tmdb.org/t/p/w500/';
+
     const thumbnail = movie.poster_path || movie.backdrop_path;
 
 
@@ -18,7 +19,7 @@ const MovieCard = ({ movie }) => {
                     className="absolute top-0 left-0 w-full h-full bg-cover bg-center transform transition-transform duration-300 group-hover:scale-110  hover:opacity-50"
                     style={{
                         backgroundImage: `url(${thumbnail ?
-                            `${imageUrl}${thumbnail}` :
+                            `${imageBaseURL}${thumbnail}` :
                             `${defaultThumbnail}`} )`
                     }}
                 ></div>
