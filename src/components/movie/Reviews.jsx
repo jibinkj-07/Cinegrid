@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Reviews({ reviews }) {
     const totalReviews = reviews.results.length;
-    if (!reviews) return <div></div>
+    if (totalReviews < 1) return <div></div>
     return (
         <div className="mb-5">
             <div className="flex justify-between">
