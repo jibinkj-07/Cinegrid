@@ -31,11 +31,11 @@ function Summary({ data }) {
 
     return (
         <div className="flex flex-col gap-5 w-full md:ml-8">
-
-            <div>
+            {Number(data.vote_average) > 0 && <div>
                 <h2 className="font-semibold text-lg">Popularity</h2>
                 <PopularityMeter popularity={data.vote_average} />
-            </div>
+            </div>}
+
             {
                 summary.map((item) => (
                     <div key={item.label} >

@@ -3,9 +3,11 @@ import { MoviesContext } from "./moviesContext";
 import { useState, useEffect } from "react";
 import { useCategory } from "./categoryContext";
 import { getMovies } from "../services/movieService";
+import { useScroll } from "./scrollContext";
 
 export const MoviesProvider = ({ children }) => {
     const { activeCategory } = useCategory();
+    const { updateScrollTop } = useScroll();
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -30,6 +32,7 @@ export const MoviesProvider = ({ children }) => {
     const fetchMovies = async () => {
         setError("");
         setLoading(true);
+        updateScrollTop(0); // resetting grid scroll to top
         try {
             const { results, total_pages } = await
                 getMovies(activeCategory.endpoint, page, activeCategory.search);

@@ -2,13 +2,16 @@
 
 import { CategoryProvider } from './CategoryProvider';
 import { MoviesProvider } from './MoviesProvider';
+import { ScrollProvider } from './ScrollProvider';
 
 const AppProviders = ({ children }) => {
     return (
         <CategoryProvider>
-            <MoviesProvider>
-                {children}
-            </MoviesProvider>
+            <ScrollProvider>
+                <MoviesProvider>
+                    {children}
+                </MoviesProvider>
+            </ScrollProvider>
         </CategoryProvider>
     );
 };

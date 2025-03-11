@@ -31,7 +31,7 @@ function OverviewSection({ data }) {
                     </div>
                     <div className="flex gap-4 overflow-x-auto w-full p-2">
                         {credits.map((person) => <CreditCard
-                            key={person.id}
+                            key={`${person.id}${person.character || person.job}`}
                             person={person} />
                         )}
                     </div>
