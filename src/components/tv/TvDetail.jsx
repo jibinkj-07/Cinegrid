@@ -1,25 +1,27 @@
 
 import { useParams } from "react-router-dom";
 import TopBarTemplate from "../core/TopBarTemplate";
-import CoverSection from "./CoverSection";
-import OverviewSection from "./OverviewSection";
+import CoverSection from "../movie/CoverSection";
+import OverviewSection from "../movie/OverviewSection";
 import { useEffect, useState } from "react";
-import { getMovieDetail } from "../services/movieService";
-import Loading from "./Loading";
+import { getShowDetail } from "../services/movieService";
+import Loading from "../movie/Loading";
 import Error from "../core/Error";
 
-function MovieDetail() {
+
+function TvDetail() {
+
     // Fetching param from URL
     const { id } = useParams();
 
     const [loading, setLoading] = useState(true);
-    const [movieData, setMovieData] = useState("");
+    const [showData, setshowData] = useState("");
     const [error, setError] = useState("");
 
-    const fetchMovieDetail = async () => {
+    const fetchshowDetail = async () => {
         try {
-            const data = await getMovieDetail(id);
-            setMovieData(data);
+            const data = await getShowDetail(id);
+            setshowData(data);
         } catch (e) {
             setError(e);
         } finally {
@@ -28,7 +30,7 @@ function MovieDetail() {
     }
 
     useEffect(() => {
-        fetchMovieDetail();
+        fetchshowDetail();
     }, []);
 
     if (loading) return <Loading />
@@ -36,7 +38,7 @@ function MovieDetail() {
         <div className="min-h-screen flex justify-center items-center">
             <Error
                 message={error}
-                onRetry={fetchMovieDetail}
+                onRetry={fetchshowDetail}
             />
         </div>);
 
@@ -45,12 +47,12 @@ function MovieDetail() {
 
             <TopBarTemplate />
 
-            <CoverSection data={movieData} />
+            <CoverSection data={showData} />
 
-            <OverviewSection data={movieData} />
+            <OverviewSection data={showData} />
 
         </div>
     );
 }
 
-export default MovieDetail;
+export default TvDetail

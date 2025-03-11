@@ -33,7 +33,7 @@ function CoverSection({ data }) {
                 <div className="mt-3 md:ml-5 z-10">
                     {/* Ensure text appears above the overlay */}
                     <h2 className="text-4xl font-semibold text-white">
-                        {data.title || data.original_title}
+                        {data.title || data.original_title || data.original_name}
                     </h2>
                     <p className="text-white">{data.tagline}</p>
 

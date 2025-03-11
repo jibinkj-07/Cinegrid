@@ -1,25 +1,23 @@
 
 import { useParams } from "react-router-dom";
-import TopBarTemplate from "../core/TopBarTemplate";
-import CoverSection from "./CoverSection";
-import OverviewSection from "./OverviewSection";
 import { useEffect, useState } from "react";
-import { getMovieDetail } from "../services/movieService";
-import Loading from "./Loading";
+import { getPersonDetail } from "../services/movieService";
+import TopBarTemplate from '../core/TopBarTemplate';
+import Profile from "./Profile";
 import Error from "../core/Error";
 
-function MovieDetail() {
+function PersonDetail() {
     // Fetching param from URL
     const { id } = useParams();
 
     const [loading, setLoading] = useState(true);
-    const [movieData, setMovieData] = useState("");
+    const [personData, setPersonData] = useState("");
     const [error, setError] = useState("");
 
-    const fetchMovieDetail = async () => {
+    const fetchPersonDetail = async () => {
         try {
-            const data = await getMovieDetail(id);
-            setMovieData(data);
+            const data = await getPersonDetail(id);
+            setPersonData(data);
         } catch (e) {
             setError(e);
         } finally {
@@ -28,29 +26,28 @@ function MovieDetail() {
     }
 
     useEffect(() => {
-        fetchMovieDetail();
+        fetchPersonDetail();
     }, []);
 
-    if (loading) return <Loading />
+    if (loading) return <div>loading</div>
     if (error) return (
         <div className="min-h-screen flex justify-center items-center">
             <Error
                 message={error}
-                onRetry={fetchMovieDetail}
+                onRetry={fetchPersonDetail}
             />
         </div>);
 
     return (
         <div className="flex justify-center flex-col items-center overflow-x-hidden">
-
             <TopBarTemplate />
+            <div className="py-20 px-5 2xl:px-[200px] w-full">
+                <Profile data={personData} />
+            </div>
 
-            <CoverSection data={movieData} />
-
-            <OverviewSection data={movieData} />
 
         </div>
     );
 }
 
-export default MovieDetail;
+export default PersonDetail

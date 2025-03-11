@@ -42,10 +42,13 @@ function GridLayout() {
             <div className="pt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-10 pb-10">
                 {
                     movies.map((data) => {
-                        if (activeCategory.id === categories[0].items[2].id || data.media_type === 'person') {
+                        if (activeCategory.type === "person" || data.media_type === 'person') {
                             return <ActorCard key={data.id} profile={data} />;
                         }
-                        return <MovieCard key={data.id} movie={data} />;
+                        return <MovieCard
+                            key={data.id}
+                            movie={data}
+                            type={activeCategory.type} />;
                     })
                 }
             </div>

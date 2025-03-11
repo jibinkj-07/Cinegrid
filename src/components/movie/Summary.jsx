@@ -6,28 +6,43 @@ import { imageBaseURL, convertMinutesToHours } from '../core/utilities.js';
 function Summary({ data }) {
 
     const summary = [
-        {
-
+        data.spoken_languages[0] ? {
             label: "Language",
             value: data.spoken_languages[0].name || data.spoken_languages[0].english_name
-        },
-        {
+        } : null,
+        data.release_date ? {
             label: "Release Date",
             value: data.release_date
-        },
-        {
+        } : null,
+        data.first_air_date ? {
+            label: "First Air Date",
+            value: data.first_air_date
+        } : null,
+        data.last_air_date ? {
+            label: "Last Air Date",
+            value: data.last_air_date
+        } : null,
+        data.runtime ? {
             label: "Runtime",
             value: convertMinutesToHours(data.runtime)
-        },
-        {
+        } : null,
+        data.number_of_seasons ? {
+            label: "Number of Seasons",
+            value: data.number_of_seasons
+        } : null,
+        data.number_of_episodes ? {
+            label: "Number of Episodes",
+            value: data.number_of_episodes
+        } : null,
+        data.status ? {
             label: "Status",
             value: data.status
-        },
-        {
+        } : null,
+        data.production_countries[0] ? {
             label: "Country",
             value: data.production_countries[0].name
-        },
-    ];
+        } : null,
+    ].filter(item => item && item.value); // Remove null/undefined values
 
     return (
         <div className="flex flex-col gap-5 w-full md:ml-8">
