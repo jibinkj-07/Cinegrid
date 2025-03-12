@@ -2,7 +2,7 @@
 import ReviewCard from "./ReviewCard"
 import { Link } from 'react-router-dom'
 
-function Reviews({ reviews }) {
+function Reviews({ reviews, type, title, id }) {
     const totalReviews = reviews.results.length;
     if (totalReviews < 1) return <div></div>
     return (
@@ -10,7 +10,7 @@ function Reviews({ reviews }) {
             <div className="flex justify-between">
                 <h2 className="font-semibold text-2xl">Reviews ({totalReviews})</h2>
                 {totalReviews > 1 && <Link
-                    to={`reviews`}
+                    to={`/reviews/${id}?type=${type}&title=${title}`}
                     className="cursor-pointer hover:opacity-60 active:scale-95 text-primary">
                     <span>Read all</span>
                 </Link>}

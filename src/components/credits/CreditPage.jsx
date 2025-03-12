@@ -45,7 +45,7 @@ function CreditPage() {
             <div className="px-5 py-10 2xl:px-[200px] mt-10">
                 <div className="pt-5 pb-2 border-b border-secondary">
                     <h2 className="text-3xl font-semibold">{title}</h2>
-                    <h2 className="mt-1 text-gray-500 text-lg">All cast and crew</h2>
+                    <h2 className="mt-1 text-gray-500 text-lg">All Cast and Crew</h2>
                 </div>
 
                 {

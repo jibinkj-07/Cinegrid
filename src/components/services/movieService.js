@@ -69,4 +69,16 @@ export const getCredits = async (id, type) => {
     }
 }
 
+export const getReviews = async (id, type) => {
+    if (!id) return;
+    let path = `${BASE_URL}/${type}/${id}/reviews?api_key=${API_KEY}`;
+    try {
+        const response = await axios.get(path);
+        return response.data;
+    } catch (e) {
+        console.log(`error from getReviews() ${e}`);
+        throw new Error(`Failed to fetch reviews`);
+    }
+}
+
 

@@ -38,7 +38,12 @@ function OverviewSection({ data, type }) {
                     </div>
                 </div>
                 {/* Reviews */}
-                <Reviews reviews={data.reviews} />
+                <Reviews
+                    reviews={data.reviews}
+                    title={title}
+                    id={data.id}
+                    type={type}
+                />
 
             </div>
             {/* Details */}
