@@ -5,6 +5,7 @@ import { getPersonDetail } from "../services/movieService";
 import TopBarTemplate from '../core/TopBarTemplate';
 import Profile from "./Profile";
 import Error from "../core/Error";
+import Loading from "./Loading";
 
 function PersonDetail() {
     // Fetching param from URL
@@ -29,7 +30,6 @@ function PersonDetail() {
         fetchPersonDetail();
     }, []);
 
-    if (loading) return <div>loading</div>
     if (error) return (
         <div className="min-h-screen flex justify-center items-center">
             <Error
@@ -42,7 +42,11 @@ function PersonDetail() {
         <div className="flex justify-center flex-col items-center overflow-x-hidden">
             <TopBarTemplate />
             <div className="py-20 px-5 2xl:px-[200px] w-full">
-                <Profile data={personData} />
+                {
+                    loading
+                        ? <Loading />
+                        : <Profile data={personData} />
+                }
             </div>
 
 
