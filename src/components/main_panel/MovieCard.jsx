@@ -10,6 +10,16 @@ const MovieCard = ({ movie, type }) => {
     const thumbnail = movie.poster_path || movie.backdrop_path;
     const date = movie.release_date || movie.first_air_date;
 
+    // If type is unknown it is coming from search
+    // So check and add manually types
+    if (!type) {
+        if (movie.first_air_date) {
+            type = 'tv';
+        } else {
+            type = 'movie';
+        }
+    }
+
     return (
         <Link to={`/${type}/${movie.id}`}>
             <div className="relative w-full h-70 rounded-2xl overflow-hidden shadow-lg border border-secondary cursor-pointer group active:scale-98">

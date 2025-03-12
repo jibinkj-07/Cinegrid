@@ -38,7 +38,7 @@ function MainTopBar() {
 
                 <form onSubmit={handleSearch}>
                     <input
-                        type="text"
+                        type="search"
                         placeholder="Search..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
