@@ -57,4 +57,16 @@ export const getPersonDetail = async (personId) => {
     }
 }
 
+export const getCredits = async (id, type) => {
+    if (!id) return;
+    let path = `${BASE_URL}/${type}/${id}/credits?api_key=${API_KEY}`;
+    try {
+        const response = await axios.get(path);
+        return response.data;
+    } catch (e) {
+        console.log(`error from getCredits() ${e}`);
+        throw new Error(`Failed to fetch credits`);
+    }
+}
+
 

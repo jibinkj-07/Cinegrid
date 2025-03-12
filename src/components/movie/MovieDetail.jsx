@@ -47,7 +47,10 @@ function MovieDetail() {
 
             <CoverSection data={movieData} />
 
-            <OverviewSection data={movieData} />
+            <OverviewSection
+                data={movieData}
+                type='movie'
+            />
 
         </div>
     );

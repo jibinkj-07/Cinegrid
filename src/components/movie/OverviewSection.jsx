@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import Summary from "./Summary.jsx";
 import Reviews from "./Reviews.jsx";
 
-function OverviewSection({ data }) {
+function OverviewSection({ data, type }) {
+    const title = data.title || data.original_title || data.original_name;
 
     let credits = data.credits.cast.slice(0, 12);
     if (credits.length === 0) {
@@ -24,7 +25,7 @@ function OverviewSection({ data }) {
                     <div className="flex justify-between">
                         <h2 className="font-semibold text-2xl">Cast & Crew</h2>
                         <Link
-                            to={`credits`}
+                            to={`/credits/${data.id}?type=${type}&title=${title}`}
                             className="cursor-pointer hover:opacity-60 active:scale-95 text-primary">
                             <span>View all</span>
                         </Link>

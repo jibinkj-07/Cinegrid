@@ -49,7 +49,10 @@ function TvDetail() {
 
             <CoverSection data={showData} />
 
-            <OverviewSection data={showData} />
+            <OverviewSection
+                data={showData}
+                type='tv'
+            />
 
         </div>
     );
