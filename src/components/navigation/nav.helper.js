@@ -17,7 +17,7 @@ const homeNavItems = [
     {
         id: "featured-tv-shows",
         icon: MdOutlineFeaturedPlayList,
-        label: "Featured TV Shower",
+        label: "Featured TV Shows",
         type: "tv",
         endpoint: "/trending/tv/day"
     },
