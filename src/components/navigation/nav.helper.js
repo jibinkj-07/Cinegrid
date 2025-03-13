@@ -10,14 +10,14 @@ const homeNavItems = [
     {
         id: "trending-movies",
         icon: TbTrendingUp,
-        label: "Trending Moviesss",
+        label: "Trending Movies",
         type: "movie",
         endpoint: "/trending/movie/day"
     },
     {
         id: "featured-tv-shows",
         icon: MdOutlineFeaturedPlayList,
-        label: "Featured TV Shows",
+        label: "Featured TV Shower",
         type: "tv",
         endpoint: "/trending/tv/day"
     },
