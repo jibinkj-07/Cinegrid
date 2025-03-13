@@ -12,4 +12,7 @@ export default defineConfig({
   }, css: {
     postcss: './postcss.config.js', // Optional, Vite auto-detects postcss.config.js
   },
+  preview: {
+    allowedHosts: ['cinegrid.onrender.com', 'localhost'], // Add your Render domain here
+  },
 })
