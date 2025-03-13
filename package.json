@@ -33,5 +33,7 @@
     "globals": "^15.14.0",
     "postcss": "^8.5.3",
     "vite": "^6.1.0"
-  }
+  },
+  "author": "Jibin K John",
+  "description": "A React-based web application for exploring movies."
 }

@@ -7,6 +7,8 @@ import defaultThumbnail from '../../assets/images/thumbnail-portait.png';
 const ActorCard = ({ profile }) => {
 
     const thumbnail = profile.profile_path;
+    const name =
+        profile.name || profile.original_name;
 
 
     return (
@@ -24,7 +26,7 @@ const ActorCard = ({ profile }) => {
 
                 {/* Gradient Overlay */}
                 <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4 backdrop-blur-[2px]">
-                    <h3 className="text-white text-lg font-semibold">{profile.name || profile.original_name}</h3>
+                    <h3 className="text-white text-lg font-semibold">{name}</h3>
                     <h3 className="text-gray-300 text-[11px] font-medium">{profile.known_for_department}</h3>
                     {/* Popularity meter */}
                     {Number(profile.vote_average) > 0 && <PopularityMeter popularity={profile.vote_average} />}

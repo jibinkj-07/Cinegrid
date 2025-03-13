@@ -48,7 +48,10 @@ function Profile({ data }) {
                     }
 
                 </div>
-                <KnownFor data={data.credits} />
+                <KnownFor
+                    data={data.credits}
+                    actorName={data.name}
+                />
             </div>
         </div >
     );

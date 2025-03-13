@@ -30,6 +30,11 @@ function TopBarTemplate() {
     }, [lastScrollY]);
 
 
+    const handleHomeRoute = () => {
+        // Clear all routes and navigate to the home page
+        navigate("/", { replace: true });
+    }
+
     return (
         // <div className="py-4 px-5 2xl:px-[200px] sticky flex justify-between items-center w-full">
         <div className={`z-50 fixed top-0 left-0 py-4 px-5 2xl:px-[200px] flex justify-between items-center w-full text-center transition-transform duration-300 ease-in-out ${showTopbar ? 'transform translate-y-0' : 'transform -translate-y-full'} bg-gradient-to-t from-transparent to-gray-900`}>
@@ -39,7 +44,12 @@ function TopBarTemplate() {
                 <span className="text-xl mr-1"> &lt;</span>Back
             </button>
 
-            <SiteLogo />
+            <button
+                onClick={handleHomeRoute}
+                className="cursor-pointer active:scale-95"
+            >
+                <SiteLogo />
+            </button>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
         </div>
     )

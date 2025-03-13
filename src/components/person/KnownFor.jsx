@@ -2,7 +2,7 @@ import MovieCard from '../main_panel/MovieCard';
 import { Link } from 'react-router-dom';
 
 /* eslint-disable react/prop-types */
-function KnownFor({ data }) {
+function KnownFor({ data, actorName }) {
     let credits = data.cast.slice(0, 10);
     if (credits.length === 0) {
         credits = data.crew.slice(0, 10);
@@ -16,7 +16,7 @@ function KnownFor({ data }) {
                     Known For
                 </h2>
                 <Link
-                    to={`credits`}
+                    to={`credits?name=${actorName}`}
                     className="cursor-pointer hover:opacity-60 active:scale-95 text-primary">
                     <span>View all</span>
                 </Link>
@@ -27,7 +27,12 @@ function KnownFor({ data }) {
                         key={`${movie.id}${movie.character || movie.job}`}
                         className='w-1/3 md:w-1/7 flex-shrink-0'
                     >
-                        <MovieCard movie={movie} type='movie' />
+                        <MovieCard
+                            movie={movie}
+                            type={movie.first_air_date
+                                ? 'tv' :
+                                'movie'}
+                        />
 
                     </div>
                 )
