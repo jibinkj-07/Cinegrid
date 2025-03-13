@@ -10,7 +10,7 @@ const homeNavItems = [
     {
         id: "trending-movies",
         icon: TbTrendingUp,
-        label: "Trending Movies",
+        label: "Trending Moviesss",
         type: "movie",
         endpoint: "/trending/movie/day"
     },
