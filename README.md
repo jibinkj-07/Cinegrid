@@ -55,7 +55,7 @@ To get started with **Cinegrid** locally, follow these steps:
 
 You can view the live version of the app at:
 
-[https://cinegrid.onrender.com/](https://cinegrid.onrender.com/)
+[[https://cinegrid-one-vercel.app](https://cinegrid-one.vercel.app/)]
 
 ## Deployment
 
