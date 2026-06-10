@@ -14,7 +14,7 @@ export const MoviesProvider = ({ children }) => {
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState("");
 
-    // Funtions to update current page numbers
+    // Functions to update current page numbers
     const updatePage = (page) => {
         setPage(page)
     }
@@ -50,13 +50,11 @@ export const MoviesProvider = ({ children }) => {
 
 
     useEffect(() => {
-        console.log("Called useEffect from MoviesProvider")
         fetchMovies();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeCategory.id, page]);
 
     useEffect(() => {
-        console.log("Category Changed")
         setPage(1);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeCategory.id]);

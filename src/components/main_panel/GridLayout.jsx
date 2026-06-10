@@ -4,7 +4,6 @@ import Pagination from './Pagination.jsx';
 import Error from '../core/Error.jsx';
 import { useMovies } from '../context/moviesContext.js';
 import { useCategory } from '../context/categoryContext.js';
-import { categories } from '../navigation/nav.helper.js';
 import { useScroll } from '../context/scrollContext.js';
 import ActorCard from './ActorCard.jsx';
 import Empty from '../core/Empty.jsx';
@@ -17,6 +16,7 @@ function GridLayout() {
 
 
     useEffect(() => {
+        if(!scrollRef.current) return;
         scrollRef.current.scrollTop = scrollTop;
     }, [])
 
