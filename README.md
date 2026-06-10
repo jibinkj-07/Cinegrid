@@ -1,7 +1,21 @@
 
 # Cinegrid
+### A structured way to explore movies
 
-Cinegrid is a React-based web application designed for exploring movies. It allows users to search for movies, view detailed information, and enjoy a smooth user experience with a modern design powered by **React**, **TailwindCSS**, and **Vite**.
+<p align="center">
+
+  <img src="images/image_1.png" width="300" alt="Home Screen">
+
+  <img src="images/image_2.png" width="300" alt="Series">
+  
+  <img src="images/image_3.png" width="300" alt="Actors">
+
+</p>
+
+
+## Overview
+ 
+**Cinegrid** is a modern, responsive web application built for movie enthusiasts. It provides a seamless experience to discover movies, browse trailers, read reviews, and check ratings — all in one beautifully designed interface. Powered by **React**, **TailwindCSS**, and **Vite**, Cinegrid delivers a fast, optimised experience on both desktop and mobile.
 
 ## Features
 
